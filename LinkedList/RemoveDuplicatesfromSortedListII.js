@@ -104,17 +104,11 @@ var RemoveDuplicatesfromSortedListII_V2 = function(head) {
       let internal = temp.next
 
       while (internal) { 
-         // if (!repeatMap[internal.next?.val]) {
-         //    break
-         // }
-
          if (repeatMap[internal.val]) {
             internal = internal.next
          } else { 
             break
          }
-
-         // internal = internal.next
       }
 
       temp.next = internal
