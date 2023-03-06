@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/NoMoneyToRaisePigs/LeetcodeSolutions/issues"
   },
-  "homepage": "https://github.com/NoMoneyToRaisePigs/LeetcodeSolutions#readme"
+  "homepage": "https://github.com/NoMoneyToRaisePigs/LeetcodeSolutions#readme",
+  "dependencies": {
+    "vue": "^3.2.47"
+  }
 }
