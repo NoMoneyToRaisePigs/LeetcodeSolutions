@@ -136,16 +136,17 @@ function reactive(target) {
 }
 
 let product = reactive({ price: 5, quantity: 2 })
-let total = 0
-let salePrice = ref(0)
+const salePrice = computed(() =>  product.price * 0.9)
+const total = computed(() => salePrice.value * product.quantity)
 
-effect(() => {
-   total = salePrice.value * product.quantity
-})
 
-effect(() => { 
-   salePrice.value = product.price * 0.9
-})
+// effect(() => {
+//    total = salePrice.value * product.quantity
+// })
+
+// effect(() => { 
+//    salePrice.value = product.price * 0.9
+// })
 
 // console.log(total, salePrice)
 
@@ -199,36 +200,44 @@ function ref(raw) {
 
 // console.log(total, salePrice.value)
 
-// product.price = 10 
+// product.price = 10
 
 // console.log(total, salePrice.value)
 
-function computed(func) { 
-   const computedRef = {}
-   const internalEff = () => { 
-      computedRef.value = func()
-   }
+// function computed(func) {
+//    const computedRef = {}
+//    const internalEff = () => {
+//       computedRef.value = func()
+//    }
 
-   effect(internalEff)
+//    effect(internalEff)
 
-   const proxy = new Proxy(computedRef, {
-      get(target, key, receiver) { 
-         track(ref, 'value')
+//    const proxy = new Proxy(computedRef, {
+//       get(target, key, receiver) {
+//          track(ref, 'value')
 
-         return Reflect.get(computedRef, 'value', receiver)
-      },
-      set(newVal) { 
-         if (newVal !== computedRef.value) { 
-            trigger(target, 'value')
+//          return Reflect.get(computedRef, 'value', receiver)
+//       },
+//       set(newVal) {
+//          if (newVal !== computedRef.value) {
+//             trigger(target, 'value')
 
-            Reflect.set(computedRef, 'value', newVal, receiver)
-         }
-      },
-   })
+//             Reflect.set(computedRef, 'value', newVal, receiver)
+//          }
+//       },
+//    })
 
-   return proxy
+//    return proxy
+// }
+
+
+function computed(getter) {
+   const result = ref()
+
+   effect(() => { result.value = getter() })
+   
+   return result
 }
-
 
 const xxx = computed(() => salePrice.value * 10)
 
