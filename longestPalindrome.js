@@ -31,7 +31,6 @@ function longestPalindrome(s) {
    return result
 }
 
-
 /**
  * @param {string} s
  * @return {string}
