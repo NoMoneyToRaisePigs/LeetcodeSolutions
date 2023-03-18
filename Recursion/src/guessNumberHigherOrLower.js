@@ -22,7 +22,7 @@ var guess = function (num) {
    return num > 6 ? -1 : 1
 }
 
-var guessNumber = function(end, start = 1) {
+export default function guessNumber(end, start = 1) {
       let middle = Math.floor((end + start) / 2)
 
       let compare = guess(middle)

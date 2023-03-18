@@ -12,6 +12,8 @@ const maxSubArray = (nums) => {
 };
 
 
+export default maxSubArray
+
 const maximumSubArray = (arr) => { 
    let max = 0
    let sum = 0

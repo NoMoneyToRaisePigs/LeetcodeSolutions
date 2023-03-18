@@ -4,7 +4,7 @@
  * @param {number} n
  * @return {boolean}
  */
-var isHappy = function (n, looped = {}) {
+export default function isHappy (n, looped = {}) {
     if (n === 1) {
         return true
     } 

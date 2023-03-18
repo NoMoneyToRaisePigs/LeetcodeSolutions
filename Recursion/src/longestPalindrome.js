@@ -1,4 +1,4 @@
-function longestPalindrome(s) { 
+export default function longestPalindrome(s) { 
    var max = 0
    var result = ''
 

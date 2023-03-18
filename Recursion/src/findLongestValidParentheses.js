@@ -2,7 +2,7 @@
  * @param {string} s
  * @return {number}
  */
-var longestValidParentheses = function (s) {
+export default function longestValidParentheses (s) {
     let result = ''
 
    const findLongest = (str) => {

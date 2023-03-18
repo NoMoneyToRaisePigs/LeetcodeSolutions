@@ -2,7 +2,7 @@
  * @param {number[][]} matrix
  * @return {number[]}
  */
-var spiralMatrix = function(matrix) {
+export default function spiralMatrix(matrix) {
    const width = matrix[0].length
    const height = matrix.length
 

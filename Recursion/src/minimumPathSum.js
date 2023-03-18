@@ -1,4 +1,4 @@
-var minPathSum = function(grid, cache = []) {
+export default function minPathSum(grid, cache = []) {
    if(grid.length === 1) {
        return grid[0].reduce((acc, cur) => acc += cur, 0)
    } 

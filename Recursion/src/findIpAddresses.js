@@ -2,7 +2,7 @@
  * @param {string} s
  * @return {string[]}
  */
-var restoreIpAddresses = function(input) {
+export default function restoreIpAddresses(input) {
    const result = []
 
    if(input.length < 4) {
