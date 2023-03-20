@@ -6,6 +6,7 @@ import longestPalindrome from './src/longestPalindrome'
 import maximumSubArray from './src/maximumSubArray'
 import minimumPathSum from './src/minimumPathSum'
 import spiralMatrix from './src/spiralMatrix'
+import maximalSquare from './src/MaximalSquare'
 
 
 window.findIpAddresses = findIpAddresses
@@ -16,5 +17,6 @@ window.longestPalindrome = longestPalindrome
 window.maximumSubArray = maximumSubArray
 window.minimumPathSum = minimumPathSum
 window.spiralMatrix = spiralMatrix
+window.maximalSquare = maximalSquare
 
-
+maximalSquare(["1","0","1","0","0"],["1","0","1","1","1"],["1","1","1","1","1"],["1","0","0","1","0"])
