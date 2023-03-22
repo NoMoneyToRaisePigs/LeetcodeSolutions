@@ -44,34 +44,45 @@ export default function isValidSudoku(board) {
    
        //check row
        for(let i = 0; i < board.length; i++){
-           const map = {}
+          const rowMap = {}
+          const columnMap = {}
    
-           for(let j = 0; j < board[i].length; j++){
-               if(isDuplicate(board[i][j], map)){
+          for (let j = 0; j < board[i].length; j++){
+               const rowNum = board[i][j]
+               const columnNum = board[j][i]
+             
+               if(isDuplicate(rowNum, rowMap)){
                    return false
                } else {
-                  if(board[i][j] != '.')
-                     map[board[i][j]] = true
+                  if(rowNum != '.')
+                     rowMap[rowNum] = true
+               }
+             
+               if(isDuplicate(columnNum, columnMap)){
+                  return false
+               } else {
+                  if(columnNum != '.')
+                     columnMap[columnNum] = true
                }
            }
        }
    
-       //check column
-       for(let i = 0; i < board.length; i++){
-           const map = {}
+      //  //check column
+      //  for(let i = 0; i < board.length; i++){
+      //      const map = {}
    
-           for(let j = 0; j < board[i].length; j++){
+      //      for(let j = 0; j < board[i].length; j++){
    
-               const numStr = board[j][i]
+      //          const numStr = board[j][i]
               
-               if(isDuplicate(numStr, map)){
-                   return false
-               } else {
-                  if(numStr != '.')
-                     map[numStr] = true
-               }
-           }
-       }
+      //          if(isDuplicate(numStr, map)){
+      //              return false
+      //          } else {
+      //             if(numStr != '.')
+      //                map[numStr] = true
+      //          }
+      //      }
+      //  }
    
        return true
    };
