@@ -18,3 +18,37 @@ btn.onclick = async () => {
 
    accountEl.textContent  = account
 }
+
+// const all = []
+
+const permute = (arr, res = '', all= []) => {
+   if(!arr.length) {
+       all.push(Number(res))
+   }
+
+   for(let i = 0; i < arr.length; i++) {
+       permute([...arr.slice(0, i), ...arr.slice(i + 1)], res + arr[i], all)
+      //  res = res.slice(0, -1)
+   }
+
+   return all
+}
+
+var subsetsWithDup = function(nums) {
+   const allPossibility = (1 << nums.length) - 1
+   const res = []
+
+   for(let i = 0; i < allPossibility; i++) {
+       const sub = []
+
+        for(let j = 0; j < nums.length; j++){
+            if((i >> j) & 1) {
+                sub.push(nums[j])
+            }
+        }
+
+        res.push(sub)
+   }
+
+   return res 
+};
