@@ -31,11 +31,11 @@ function request(url) {
 }
 
 
-request('www.baidu.com').then(res => console.log(res))
-request('www.baidu.com').then(res => console.log(res))
-request('www.baidu.com').then(res => console.log(res))
+request('fake.com').then(res => console.log(res))
+request('fake.com').then(res => console.log(res))
+request('fake.com').then(res => console.log(res))
 
 setTimeout(() => {
-   request('www.baidu.com').then(res => console.log(res))
+   request('fake.com').then(res => console.log(res))
 }, 3000);
 
