@@ -7,7 +7,7 @@ import maximumSubArray from './src/maximumSubArray'
 import minimumPathSum from './src/minimumPathSum'
 import spiralMatrix from './src/spiralMatrix'
 import maximalSquare from './src/MaximalSquare'
-
+import binarySearch  from './src/binarySearch'
 
 window.findIpAddresses = findIpAddresses
 window.findLongestValidParentheses = findLongestValidParentheses
@@ -18,5 +18,6 @@ window.maximumSubArray = maximumSubArray
 window.minimumPathSum = minimumPathSum
 window.spiralMatrix = spiralMatrix
 window.maximalSquare = maximalSquare
+window.binarySearch = binarySearch
 
 maximalSquare(["1","0","1","0","0"],["1","0","1","1","1"],["1","1","1","1","1"],["1","0","0","1","0"])
