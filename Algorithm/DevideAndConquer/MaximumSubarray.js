@@ -7,6 +7,9 @@
 var maxSubArray = function(nums) {
    let max_so_far = Number.MIN_SAFE_INTEGER
    let max_ending_here = Number.MIN_SAFE_INTEGER
+   
+   let left = 0
+   let right = 0
 
    for(let i = 0; i < nums.length; i++) {
        const num = nums[i]
